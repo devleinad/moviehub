@@ -17,6 +17,13 @@ HOW TO USE IT:
 Set their values to the api key and token generated for you when you signed up. Also, so as not to manually include our api and token key, yet would want them to be accessible, we have included the variables in our services in the  <b>tmdb</b> array.
 
 3. After successful configurations in the above steps, start your development server (<b>php artisan serve</b>), open a browser and hit the uri: <b>127.0.0.1:8000/movies</b>. You should see a list of popular movies. 
+
 NB: Since you will be making an API call to a remote server, be sure to have internet connection.
+
+Please, if you find my work interesting and would like to work with me, you can contact me on the following platforms:
+<ul>
+  <li>Twitter: <a href="https://twitter.com/devleinad">@devleinad</a></li>
+  <li>Email:peprahdaniel.dp@gmail.com</li>
+</ul>
 
 THANK YOU
