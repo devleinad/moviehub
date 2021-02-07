@@ -3,15 +3,23 @@
         <img src="{{'https://image.tmdb.org/t/p/w500/'.$movie['poster_path']}}"alt="{{$movie['original_title']}}">
     </a>
     <div class="movie-info">
-        <div class="rating rounded-circle">
-            <h5>{{$movie['vote_average'] * 10 > 0 ? $movie['vote_average'] * 10: "NR" }}<sup><small>%</small></sup></h5>
-        </div>
         <h6 class="movie-title ml-3">{{$movie['original_title']}}</h6>
-        <h6 class="movie-release-date text-muted ml-3">Released: {{\Carbon\Carbon::parse($movie['release_date'])->format('M d, Y')}}</h6>
+        <h5 class="movie-release-date ml-3">
+            Released: {{\Carbon\Carbon::parse($movie['release_date'])->format('M d, Y')}}
+        </h5>
+        <div class="rating">
+            <h5>Rated: <span class="fa fa-star @if($movie['vote_average'] * 10 < 50) text-warning @else text-success @endif" style="font-size: 10px"></span> @if($movie['vote_average'] * 10 > 0 )
+                {{$movie['vote_average'] * 10}}<sup><small>%</small></sup>
+                @else
+                NR
+                @endif
+            </h5>
+        </div>
         <div class="genre-box ml-3">
-            @foreach($movie['genre_ids'] as $genre)
+            <h5>@foreach($movie['genre_ids'] as $genre)
             <i>{{$genres->get($genre)}} @if(!$loop->last),@endif</i>
             @endforeach
+            </h5>
         </div>
     </div>
             

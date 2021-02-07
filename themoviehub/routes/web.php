@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+})->missing(function () {
+    return "Page Not Found";
+});
+
 Route::get('/movies', [MoviesController::class, 'index']);
 Route::get('/movie/{movie_id}', [MoviesController::class, 'show'])->name('movies.show');

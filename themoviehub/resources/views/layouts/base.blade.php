@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>{{$title ?? 'themovieshub'}}</title>
     <style>
       body{
@@ -21,7 +21,38 @@
 
       .container .movies-container{
         padding: 5px 5px;
-       
+      }
+
+      .container .single-movie-container{
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-column-gap: 1rem;
+        margin-top: 40px;
+        background-color: #273746;
+        height: auto;
+        
+      }
+
+      .container .single-movie-container .single-movie-image-container{
+        width: 100%;
+        flex: 1;
+      }
+
+      .container .single-movie-container .single-movie-image-container img{
+        width: 100%;
+      }
+
+      .container .single-movie-container .single-movie-details{
+        padding: 10px;
+      }
+      .container .single-movie-container .single-movie-details .rating{
+        color:#fff;
+      }
+
+      .container .single-movie-container .single-movie-details .grid-info{
+        display: grid;
+        grid-template-columns: 30% 40% 20%;
       }
      
       .container .movies-container .popular-movies-container h2 {
@@ -58,36 +89,22 @@
         padding-bottom: 7px;
       }
 
-      .container .movies-container
-       .popular-movies-container 
-       .movie .popular-movie .movie-info .rating{
-         position: absolute;
-         left: 150px;
-         padding: 6px;
-         border-radius: 50%;
-         background-color: #1A5276;
-         text-align: center;
-       }
-
+    
        .container .movies-container
        .popular-movies-container 
        .movie .popular-movie .movie-info .rating h5{
-         font-size: 12px;
-         font-weight: bold;
-         color:yellow;
+         font-size: 13px;
        }
 
       .container .movies-container 
       .popular-movies-container .movie .popular-movie .movie-info .movie-title{
         font-weight:bolder;
         font-size: 17px;  
-        margin-top: 50px;      
       }
       .container .movies-container
        .popular-movies-container 
        .movie .popular-movie .movie-info .movie-release-date{
-        font-size: 14px;
-        font-weight: normal;
+        font-size: 13px;
       }
 
       .container  .movies-container

@@ -35,6 +35,8 @@ class MoviesController extends Controller
     {
         $movie = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/movie/' . $movie_id)->json();
-        dd($movie);
+        //dd($movie);
+        $title = "themovieshub - " . $movie['original_title'];
+        return view('movies.show', compact('title', 'movie'));
     }
 }
