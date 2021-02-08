@@ -21,11 +21,8 @@
                     <span class="fa fa-circle text-warning ml-2" style="font-size: 6px"></span> &nbsp;
                     <small class="text-white ml-4">Genres: @foreach($movie['genres'] as $genre) <i class="text-warning">{{$genre['name']}}</i> @if(!$loop->last),@endif @endforeach</small>
                     <div class="rating">
-                        <small>Rated: <span class="fa fa-star @if($movie['vote_average'] * 10 < 50) text-warning @else text-success @endif" style="font-size: 10px"></span> @if($movie['vote_average'] * 10 > 0 )
-                            {{$movie['vote_average'] * 10}}<sup><small>%</small></sup>
-                            @else
-                            NR
-                            @endif
+                        <small>Rated: <span class="fa fa-star {!! presentMovieRatingStarColor($movie['vote_average']) !!}" style="font-size: 10px"></span> 
+                            {!! presentMovieRatingPErcentage($movie['vote_average']) !!}
                         </small>
                     </div>
 

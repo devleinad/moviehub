@@ -8,11 +8,8 @@
             Released: {{\Carbon\Carbon::parse($movie['release_date'])->format('M d, Y')}}
         </h5>
         <div class="rating">
-            <h5>Rated: <span class="fa fa-star @if($movie['vote_average'] * 10 < 50) text-warning @else text-success @endif" style="font-size: 10px"></span> @if($movie['vote_average'] * 10 > 0 )
-                {{$movie['vote_average'] * 10}}<sup><small>%</small></sup>
-                @else
-                NR
-                @endif
+            <h5>Rated: <span class="fa fa-star {!! presentMovieRatingStarColor($movie['vote_average']) !!}" style="font-size: 10px"></span>
+                {!! presentMovieRatingPercentage($movie['vote_average']) !!}
             </h5>
         </div>
         <div class="genre-box ml-3">
